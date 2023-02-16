@@ -28,6 +28,7 @@ class Result {
             char charac = path.charAt(i);
             if(charac == 'U'){
                 seaLevel++;
+                //The key of the problem is: when you steped down and come back again the sea level
                 if(seaLevel == 0){
                     countValley++;
                 }
