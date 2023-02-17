@@ -1,58 +1,44 @@
-public static int pickingNumbers(List<Integer> a) {
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Result {
+
+    /*
+     * Complete the 'pickingNumbers' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY a as parameter.
+     */
+    public static List<Integer> createSubArray(List<Integer> a,int b){
+        List<Integer> subArray = new ArrayList<>();
+        
+        for(Integer integer: a){
+            if( integer == b || integer +1 ==b){
+                subArray.add(integer);
+            }
+        }
+        return subArray;
+    }
+
+    public static int pickingNumbers(List<Integer> a) {
     // Write your code here
         int result =0, tempVal=0;
         List<Integer> subArray = new ArrayList<>();
         List<Integer> resultArray = new ArrayList<>();
-        for(int i =0; i< a.size(); i++){
-            
-            //tempVal = i;
-            subArray.add(a.get(i));
-            for (int j =i+1 ;j<a.size();j++){
-                
-                //tempVal = subArray.get(subArray.size() - 1);
-                System.out.println("before check 1"+subArray);
-                //System.out.println("before check 1"+subArray);
-                
-                    tempVal = subArray.get(subArray.size() - 1);
-                
-                // System.out.println(" before "+subArray);
-                System.out.println(" before val " + j+ " "+a.get(j));
-                System.out.println(" before val "+ i+ " "+a.get(i));
-                // System.out.println(" before val temp "+a.get(tempVal));
-                // boolean val = (Math.abs(a.get(j) - a.get(i))<=1) && (Math.abs(a.get(j) - a.get(tempVal)) <=1);
-                //System.out.println(" condition "+ val);
-                
-                //tempVal = subArray.get(subArray.size() - 1);
-                System.out.println("tempVal: " +tempVal);
-                if((Math.abs(a.get(j) - a.get(i))<=1) &&((Math.abs(a.get(j) - tempVal)<=1)) ){
-                    subArray.add(a.get(j));
-                    
-                }
-                if((Math.abs(a.get(j) - tempVal) >1)){
-                    resultArray.add(subArray.size());
-                    System.out.println(" check 1"+subArray);
-                    subArray.clear();
-                    subArray.add(a.get(i));
-                    if((Math.abs(a.get(j) - a.get(i))<=1)){
-                        subArray.add(a.get(j));
-                    }
-                }
-                
-                
-                
-                
-                
-                // if(Math.abs(a.get(j) - a.get(tempVal)) >1){
-                //     subArray.clear();
-                // }
-                //tempVal++;
-            }
-            //System.out.println("check2" + subArray);
-            // resultArray.add(subArray.size());
-            subArray.clear();
-            
-            
+        
+        for(int i =0; i< a.size();i++){
+            resultArray.add(createSubArray(a,a.get(i)).size());
         }
+        
         System.out.println(resultArray);
         for(Integer integer: resultArray){
             if(integer >=result){
@@ -61,3 +47,26 @@ public static int pickingNumbers(List<Integer> a) {
         }
         return result;
     }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+        int result = Result.pickingNumbers(a);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
