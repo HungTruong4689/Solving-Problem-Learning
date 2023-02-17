@@ -20,93 +20,45 @@ class Result {
      *  1. INTEGER_ARRAY ranked
      *  2. INTEGER_ARRAY player
      */
-     
-    public static int binarySearch(List<Integer> arr, int left, int right, int x)
-    {
-        if (right >= left) {
-            int mid = left + (right - left) / 2;
-  
-            // If the element is present at the
-            // middle itself
-            if (arr.get(mid) == x)
-                return mid;
-  
-            // If element is smaller than mid, then
-            // it can only be present in left subarray
-            if (arr.get(mid) > x)
-                return binarySearch(arr, mid + 1, right, x);
-  
-            // Else the element can only be present
-            // in right subarray
-            
-            return binarySearch(arr, left, mid - 1, x);
-        }
-  
-        // We reach here when element is not present
-        // in array
-        return -1;
-    }
 
-    public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
-    // Write your code here
-        List<Integer> subArray = new ArrayList<>();
-        List<Integer> result = new ArrayList<>();
-        int value =0;
+      public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
+        List<Integer> result = new ArrayList<Integer>();
+        //Elimina numeros repetidos
+        Set<Integer> hashSet = new HashSet<Integer>(ranked);
+        ranked.clear();
+        ranked.addAll(hashSet);
+        //Ordena de mayor a menor 
+        Comparator<Integer> comparador = Collections.reverseOrder();
+        Collections.sort(ranked, comparador);
          
-        for(Integer elm: ranked){
-            if(!subArray.contains(elm)){
-                subArray.add(elm);
-            }
-        }
-        Collections.sort(subArray, Collections.reverseOrder());
-        
-        
-        for(Integer elem: player){
-            if(subArray.contains(elem)){
-                
-                System.out.println(subArray);
-                value = binarySearch(subArray,0,subArray.size()-1,elem);
-                System.out.println(value);
-                if(value>=0){
-                    result.add(value+1);
+        for (Integer valuePlayer : player) {
+            int start = 0;
+            int end = ranked.size() - 1;
+            int medium = (start + end) / 2;
+            int i = 0;
+            //Busqueda binaria
+            while (start <= end && ranked.get(medium) != valuePlayer) {
+                if (valuePlayer < ranked.get(medium)) {
+                    start = medium + 1;
+                    i = start;
+                } else {
+                    end = medium - 1;
+                    i = end;                    
                 }
-                
-                
-            }else{
-                if(elem >= subArray.get(0)){
-                    result.add(1);
-                    subArray.add(elem);
-                    Collections.sort(subArray, Collections.reverseOrder());
-                }
-                else if(elem <= subArray.get(subArray.size()-1)){
-                    result.add(subArray.size()+1);
-                    subArray.add(elem);
-                    Collections.sort(subArray, Collections.reverseOrder());
-                }else{
-                    subArray.add(elem);
-                    Collections.sort(subArray, Collections.reverseOrder());
-                value = binarySearch(subArray,0,subArray.size()-1,elem);
-            //System.out.println(value);
-                    if(value>=0){
-                        result.add(value+1);
-                    }
-                }
-                
-                
-            }
-            
-            
-            
-            //result.add(subArray.indexOf(elem) + 1);
-            // for(int j =0 ; j<subArray.size();j++){
-            //     if(elem==subArray.get(j)){
-            //         result.add(j+1);
-            //         break;
-            //     }
-            // }
+                medium = (start + end) / 2;
+            }        
+            if (medium == ranked.size()) {
+                result.add(medium + 1);
+            } else if (i < 0) {
+                result.add(1);              
+            } else {
+                if (valuePlayer == ranked.get(medium)) result.add(medium + 1);
+                else result.add(medium + 2);
+            }                      
         }
         return result;
     }
+
 
 }
 
