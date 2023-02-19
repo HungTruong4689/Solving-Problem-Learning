@@ -12,31 +12,12 @@ public class Solution {
     static int jumpingOnClouds(int[] c, int k) {
         int e =100;
         int i =0;
-        i+=k;
-        if(i >= c.length){
-                i = i % c.length;
-            }
-        while(i!=0){
-            
-            if(c[i]==1){
-                e = e -1-2;
-            }else{
-                e = e-1;
-            }
-            i+=k;
-            //System.out.println(i);
-            if(i >= c.length){
-                i = i % c.length;
-            }
-            
-        }
-        if(i ==0){
-            if(c[i]==1){
-                e = e -1-2;
-            }else{
-                e = e-1;
-            }
-        }
+        do{
+            if(c[i]==1) e-=2;
+            e -- ;
+            i = (i+k)%c.length;
+        }while(i != 0);
+        
         return e;
     }
 
