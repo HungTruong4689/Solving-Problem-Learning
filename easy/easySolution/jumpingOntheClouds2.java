@@ -29,28 +29,12 @@ class Result {
              System.out.println(firstStep);
              
             
-            if(firstStep +2 <=  c.size()-1 ){
-                if(c.get(firstStep +1) == 1  ){
+            if(firstStep +2 < c.size() && c.get(firstStep +2) == 0){
                 firstStep = firstStep +2;
-                countStep++;
-                }
-                else if(c.get(firstStep +2) == 1 ){
-                    firstStep = firstStep +1;
-                    countStep++;
-                }
-                else if(c.get(firstStep +1) == 0 && c.get(firstStep +2) == 0 && firstStep +2 <=  c.size()-1){
-                firstStep = firstStep +2;
-                countStep++;
-                }
-            }else if(firstStep +2 ==  c.size()){
-                if(c.get(firstStep +1) == 0  ){
-                    firstStep = firstStep +1;
-                    countStep++;
-                }
             }else{
-                break;
+                firstStep++;
             }
-            
+            countStep++;
             
             
             
