@@ -33,16 +33,23 @@ class Result {
     public static List<Integer> serviceLane(int n,List<Integer> width, List<List<Integer>> cases) {
     // Write your code here
         List<Integer> result = new ArrayList<Integer>();
-        for(int i =0; i<cases.size(); i++){
-            System.out.println(width);
-            List<Integer> sublist = new ArrayList<Integer>();
-            int start = cases.get(i).get(0);
-            int end = cases.get(i).get(1) +1;
-            sublist = width.subList(start, end);
-            System.out.println(sublist);
-            int min = Collections.min(sublist);
+        // for(int i =0; i<cases.size(); i++){
+        //     System.out.println(width);
+        //     List<Integer> sublist = new ArrayList<Integer>();
+        //     int start = cases.get(i).get(0);
+        //     int end = cases.get(i).get(1) +1;
+        //     sublist = width.subList(start, end);
+        //     System.out.println(sublist);
+        //     int min = Collections.min(sublist);
+        //     result.add(min);
+        // }
+        cases.forEach(i ->{
+            int start = i.get(0);
+            int end = i.get(1) +1;
+            List<Integer> sl = width.subList(start, end);
+            int min = Collections.min(sl);
             result.add(min);
-        }
+        });
         return result;
     }
 
