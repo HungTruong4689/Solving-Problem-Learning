@@ -19,44 +19,29 @@ class Result {
      * The function accepts STRING_ARRAY grid as parameter.
      */
     
-    public static boolean checkPosition(List<String> grid, int i, int j){
-        int left = j -1;
-        int right = j+1;
-        int top = i -1;
-        int bottom = i +1;
-        int mainVal = 0;
-        int leftVal =0, rightVal =0, topVal =0, botVal =0;
-        if( left == -1 || right == grid.get(i).length() || top == -1 || bottom == grid.size()){
-            return false;
-        }else{
-            
-            mainVal = grid.get(i).charAt(j) - '0';
-            leftVal = grid.get(i).charAt(left) - '0';
-            rightVal = grid.get(i).charAt(right) - '0';
-            topVal = grid.get(top).charAt(j) - '0';
-            botVal = grid.get(bottom).charAt(j)- '0';
-            if( leftVal == 88 || rightVal == 88 || topVal == 88 ||botVal == 88 ){
-                return false;
-            }
-            else if( mainVal > leftVal && mainVal > rightVal && mainVal > topVal && mainVal > botVal ){ 
-                return true;
-            }
-            return false;
-        }
-    }
+    
+     
 
     public static List<String> cavityMap(List<String> grid) {
     // Write your code here
-        for(int i =0; i< grid.size();i++){
-            for(int j =0; j < grid.get(i).length();j++){
-                boolean change = checkPosition(grid,i,j);
-                if(change == true){
-                    grid.set(i,grid.get(i).replace(grid.get(i).charAt(j),'X'));
-                    System.out.println(grid.get(i).replace(grid.get(i).charAt(j),'X'));
+        List<Integer> x = new ArrayList<Integer>();
+        List<Integer> y = new ArrayList<Integer>();
+        for(int i =1; i< grid.size() -1;i++){
+            for(int j =1; j< grid.get(i).length() -1;j++){
+                Character c = grid.get(i).charAt(j);
+                Character l = grid.get(i).charAt(j-1);
+                Character r = grid.get(i).charAt(j+1);
+                Character t = grid.get(i-1).charAt(j);
+                Character b = grid.get(i+1).charAt(j);
+                if(c > t && c>b && c>l && c >r){
+                    x.add(i);
+                    y.add(j);
                 }
             }
         }
-        
+        for(int k =0; k < x.size();k++){
+            grid.set(x.get(k),grid.get(x.get(k)).substring(0,y.get(k))+'X'+grid.get(x.get(k)).substring(y.get(k)+1,grid.get(x.get(k)).length()));
+        }
         
         return grid;
     }
