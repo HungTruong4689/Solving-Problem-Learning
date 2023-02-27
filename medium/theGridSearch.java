@@ -28,14 +28,16 @@ class Result {
         
         
         
-        for(int i =0; i< G.size() - P.size();i++){
+        for(int i =0; i< G.size() - P.size()+1;i++){
             
-            for(int j =0; j< G.get(0).length() - P.get(0).length();j++){
+            for(int j =0; j< G.get(0).length() - P.get(0).length()+1;j++){
                 int count =0;
                 for(int k= 0; k< P.size();k++){
                     for(int m =0;m < P.get(k).length();m++){
                         if(G.get(i+k).charAt(j+m) == P.get(k).charAt(m)){
                             count++;
+                        }else{
+                            break;
                         }
                     }
                 }
