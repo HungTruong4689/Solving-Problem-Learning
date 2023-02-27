@@ -18,81 +18,59 @@ class Result {
      * The function is expected to return a STRING.
      * The function accepts STRING b as parameter.
      */
-    public static boolean checkarr(List<Integer> arr){
-        int count =0;
-        for(int i =1; i< arr.size();i++){
-            if(arr.get(i)- arr.get(i-1) == 1){
-                count++; 
+     private static final String YES = "YES";
+    private static final String NO = "NO";
+    private static final char UNDERSCORE = '_';
+    private static final int NUMBER_OF_CHARACTERS = 26;
+    private static final int INDEX_A = 65;
+    
+    public static String happyLadybugs(String board) {
+        int numberOfEmptyCells = 0;
+        int[] characterFrequencies = new int[NUMBER_OF_CHARACTERS];
+        
+        /* Determine the frequencies */
+        for (char currentCharacter : board.toCharArray()) {
+            if (currentCharacter == UNDERSCORE) { // cell is empty
+                numberOfEmptyCells++;
+            } else { // cell contains a ladybug
+                int characterIndex = currentCharacter - INDEX_A;
+                characterFrequencies[characterIndex]++;
             }
         }
-        if( arr.size()-1 ==1){
+        
+        /* If there is only a single colored ladybug, there is no chance made all ladybugs happy */
+        for (int frequency : characterFrequencies) {
+            if (frequency == 1) {
+                return NO;
+            }
+        }
+        
+        /* If there board consists of ladybugs all of them are happy */
+        if (isAlreadyAllLadybugsHappy(board)) {
+            return YES;
+        }
+        
+        /* If there is no chance to make all ladybugs happy */
+        if (numberOfEmptyCells == 0) {
+            return NO;
+        }
+        
+        return YES; // all ladybugs can be made happy
+    }
+    
+    private static boolean isAlreadyAllLadybugsHappy(String board) {
+        if (board.length() == 1) {
             return false;
         }
-        else if(count == arr.size()-1){
-            return true;
-        }else{
-            return false;
+        
+        for (int i = 1; i < board.length() - 1; i++) {
+            if (board.charAt(i) != board.charAt(i - 1) && board.charAt(i) != board.charAt(i + 1)) {
+                return false;
+            }
         }
+        
+        return true;
     }
-
-    public static String happyLadybugs(String b) {
-    // Write your code here
-        HashMap<Character, List<Integer>> sets = new HashMap<Character, List<Integer>>();
-        
-        for (int i =0; i< b.length();i++){
-            if(!sets.keySet().contains(b.charAt(i))){
-                List<Integer> list = new ArrayList<Integer>();
-                list.add(i);
-                sets.put(b.charAt(i),list);
-            }else{
-                List<Integer> list = new ArrayList<Integer>();
-                list = sets.get(b.charAt(i));
-                list.add(i);
-                sets.put(b.charAt(i),list);
-            }
-        }
-        System.out.println(sets);
-        if(sets.keySet().contains('_')  ){
-            for (Character i : sets.keySet()) {
-                if(sets.get(i).size() <2 && i != '_'){
-                    return "NO";
-                }
-            
-            }
-            if(sets.get('_').size() == b.length()){
-                return "YES";
-            }else{
-                return "YES";
-            }
-            
-        }
-        else if(!sets.keySet().contains('_')){
-            int count =0;
-            for (Character i : sets.keySet()) {
-                if(checkarr(sets.get(i))){
-                    count++;
-                }
-                if(sets.get(i).size() ==1){
-                    return "NO";
-                }
-            
-            }
-            if(count == sets.size()){
-                return "YES";
-            }else{
-                return "NO";
-            }
-            
-            
-        }else{
-             return "YES";
-        }
-        
-        //return "YES";
-        
-       
-    }
-
 }
 
 public class Solution {
