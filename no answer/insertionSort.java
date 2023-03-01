@@ -19,27 +19,34 @@ class Result {
      *  1. INTEGER n
      *  2. INTEGER_ARRAY arr
      */
+      private static void printArray(List<Integer> arr) {
+      for(Integer elm : arr){
+                System.out.print(elm+ " ");
+            }
+            System.out.println();
+   }
 
     public static void insertionSort1(int n, List<Integer> arr) {
     // Write your code here
         int last = n -1;
         int nextLast = n -2;
-        int temp = arr.get(last);
+        //int temp = 
         
-        
-        while(arr.get(nextLast)>temp && nextLast>=0){
-            
-            arr.set(nextLast+1,arr.get(nextLast));
-            //arr.set(nextLast,temp);
-            
-            for(Integer elm : arr){
-                System.out.print(elm+ " ");
+        int tmp = arr.get(last);
+        for(int i = nextLast; i  >=0; i--){
+            if(tmp >= arr.get(i)){//Found where it goes
+                arr.set(i+1,tmp);
+                printArray(arr);
+                break;
             }
-            System.out.println();
-            arr.set(nextLast,temp);
-            //last--;
-            nextLast--;
+            arr.set(i+1,arr.get(i));//Shift to the right
+            printArray(arr);
         }
+        if(tmp < arr.get(0)){
+          arr.set(0,tmp);  
+          printArray(arr);
+        } 
+        
         // arr.set(last,temp);
         // for(Integer elm : arr){
         //         System.out.print(elm+ " ");
