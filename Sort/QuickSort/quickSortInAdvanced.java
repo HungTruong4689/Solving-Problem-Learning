@@ -10,38 +10,40 @@ public class Solution {
     static void quickSort(int[] ar, int start, int end) {
         if (start < end) {
             int pivotValue = partition(ar, start, end);
+            printArray(ar, 0, ar.length - 1);
             quickSort(ar, start, pivotValue - 1);
             quickSort(ar, pivotValue + 1, end);
-            printArray(ar, start, end);
+
         }
+
     }
 
-    static int partition(int[] ar, int start, int end) {
+    static int partition(int[] ar, int low, int hi) {
         List<Integer> left = new ArrayList<Integer>();
         List<Integer> right = new ArrayList<Integer>();
 
-        int value = ar[start];
-
-        for (int i = start + 1; i <= end; i++) {
-            if (ar[i] > value) {
-                right.add(ar[i]);
-            } else {
-                left.add(ar[i]);
+        int value = ar[hi];
+        int i = low - 1;
+        for (int j = low; j < hi; j++) {
+            if (ar[j] < value) {
+                i++;
+                swap(ar, i, j);
             }
         }
+        swap(ar, i + 1, hi);
 
-        copy(left, ar, start);
-        int newIndex = start + left.size();
-        ar[newIndex] = value;
-        copy(right, ar, newIndex + 1);
-
-        return newIndex;
+        return i + 1;
     }
 
-    static void copy(List<Integer> list, int[] array, int startIndex) {
-        for (int num : list) {
-            array[startIndex++] = num;
-        }
+    // static void copy(List<Integer> list, int[] array, int startIndex) {
+    // for (int num : list) {
+    // array[startIndex++] = num;
+    // }
+    // }
+    static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     static void printArray(int[] ar, int start, int end) {
