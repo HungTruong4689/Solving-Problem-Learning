@@ -20,7 +20,7 @@ class Result {
 
     public static void countSort(List<List<String>> arr) {
         // Write your code here
-        HashMap<Integer, List<String>> sets = new HashMap<Integer, List<String>>();
+        HashMap<Integer, String> sets = new HashMap<Integer, String>();
         int max = 0;
         for (int i = 0; i < arr.size(); i++) {
             int val = Integer.parseInt(arr.get(i).get(0));
@@ -30,8 +30,8 @@ class Result {
         }
 
         for (int i = 0; i < max + 1; i++) {
-            List<String> sub = new ArrayList<String>();
-            sets.put(i, sub);
+            // List<String> sub = new ArrayList<String>();
+            sets.put(i, "");
         }
 
         for (int i = 0; i < arr.size(); i++) {
@@ -40,8 +40,8 @@ class Result {
                 arr.get(i).set(1, "-");
             }
             int num = Integer.parseInt(arr.get(i).get(0));
-            List<String> sub = sets.get(num);
-            sub.add(arr.get(i).get(1));
+            String sub = sets.get(num);
+            sub += arr.get(i).get(1) + " ";
             sets.put(num, sub);
 
         }
@@ -54,11 +54,12 @@ class Result {
         // }
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < max + 1; i++) {
-            List<String> values = sets.get(i);
-            for (String str : values) {
-                sb.append(str + " ");
-            }
+            String values = sets.get(i);
+
+            sb.append(values);
+
         }
+        // System.out.println(sets);
         System.out.println(sb);
 
         // System.out.println(count);
