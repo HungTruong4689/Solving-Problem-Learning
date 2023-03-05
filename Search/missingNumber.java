@@ -24,8 +24,9 @@ class Result {
     public static List<Integer> missingNumbers(List<Integer> arr, List<Integer> brr) {
         // Write your code here
         HashMap<Integer, Integer> map1 = new HashMap<Integer, Integer>();
-        HashMap<Integer, Integer> map2 = new HashMap<Integer, Integer>();
+        // HashMap<Integer,Integer> map2 = new HashMap<Integer,Integer>();
         List<Integer> result = new ArrayList<Integer>();
+        HashSet<Integer> sub = new HashSet<Integer>();
 
         for (Integer elm : arr) {
             if (!map1.keySet().contains(elm)) {
@@ -37,66 +38,25 @@ class Result {
             }
         }
         for (Integer elm : brr) {
-            if (!map2.keySet().contains(elm)) {
-                map2.put(elm, 1);
+            if (map1.keySet().contains(elm)) {
+                sub.add(elm);
+                int val = map1.get(elm);
+                val--;
+                map1.put(elm, val);
             } else {
-                int val = map2.get(elm);
-                val++;
-                map2.put(elm, val);
+
+                map1.put(elm, 1);
             }
         }
-        List<Integer> same = new ArrayList<Integer>();
-        List<Integer> diff1 = new ArrayList<Integer>();
-        List<Integer> diff2 = new ArrayList<Integer>();
-        for (Integer elm : map1.keySet()) {
-            if (map2.keySet().contains(elm)) {
-                same.add(elm);
+        for (Integer elm : sub) {
+            if (map1.get(elm) == 0) {
+                map1.remove(elm);
             }
         }
         for (Integer elm : map1.keySet()) {
-            if (!same.contains(elm)) {
-                diff1.add(elm);
-            }
+            result.add(elm);
         }
-        for (Integer elm : map2.keySet()) {
-            if (!same.contains(elm)) {
-                diff2.add(elm);
-            }
-        }
-        for (Integer elm : same) {
-            int val = Math.abs(map1.get(elm) - map2.get(elm));
-            if (val != 0) {
-                // for(int i =0; i< val;i++){
-                // result.add(elm);
-                // }
-                result.add(elm);
-            }
 
-        }
-        for (Integer elm : diff1) {
-            int val = map1.get(elm);
-            if (val != 0) {
-                result.add(elm);
-                // for(int i =0; i< val;i++){
-                // result.add(elm);
-                // }
-            }
-
-        }
-        for (Integer elm : diff2) {
-            int val = map2.get(elm);
-            if (val != 0) {
-                for (int i = 0; i < val; i++) {
-                    result.add(elm);
-                }
-            }
-
-        }
-        System.out.println(map1);
-        System.out.println(map2);
-        System.out.println(same);
-        System.out.println(diff1);
-        System.out.println(diff2);
         Collections.sort(result);
         return result;
 
