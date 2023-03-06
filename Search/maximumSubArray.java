@@ -82,7 +82,7 @@ class Result {
             max = Math.max(max, localMax);
         }
         max = Math.max(max, maxLeft);
-        max = Math.max(max, maxRight);
+        // max = Math.max(max, maxRight);
 
         return max;
     }
