@@ -16,75 +16,40 @@ class Result {
      * 1. LONG_INTEGER_ARRAY a
      * 2. LONG_INTEGER m
      */
-    public static long maxArr(List<Long> arr) {
-        long max = 0;
-        for (Long elm : arr) {
-            if (elm > max) {
-                max = elm;
-            }
-        }
-        return max;
-    }
+    // public static long maxArr(List<Long> arr){
+    // long max =0;
+    // for(Long elm: arr){
+    // if(elm >max){
+    // max = elm;
+    // }
+    // }
+    // return max;
+    // }
 
     public static long maximumSum(List<Long> a, long m) {
         // Write your code here
 
-        // List<Long> list = new ArrayList<Long>();
-        // long localMax=0; long max =0;
-        // long sum =0;
-        // for(int i =0; i < a.size();i++){
-        // // localMax = a.get(i) % m;
-        // // if(localMax >= max){
-        // // max = localMax;
-        // // }
-        // // long sum=a.get(i);
-        // sum = a.get(i);
-        // localMax = sum % m;
-        // if(localMax > max){
-        // max = localMax;
-        // }
-        // for(int j =i -1;j>=0;j--){
-        // sum += a.get(j);
-        // localMax = sum %m;
+        long max = 0;
+        long prefix = 0;
+        TreeSet<Long> sets = new TreeSet<Long>();
+        sets.add(0L);
 
-        // if(localMax > max){
-        // max = localMax;
-        // }
-        // if(max == m -1){
-        // return max;
-        // }
-        // }
-        // // sum = a.get(i);
-        // // localMax = sum % m;
-        // // if(localMax > max){
-        // // max = localMax;
-        // // }
-        // if(max == m -1){
-        // return max;
-        // }
-        // }
-        if (a.size() == 1) {
-            return a.get(0) % m;
+        for (int i = 0; i < a.size(); i++) {
+
+            prefix = (prefix + a.get(i)) % m;
+            max = Math.max(prefix, max);
+
+            Long it = sets.higher(prefix);
+
+            if (it != null) {
+                max = Math.max(max, (prefix - it + m) % m);
+            }
+            sets.add(prefix);
         }
-        long max = 0, localMax = 0;
-        int mid = a.size() / 2;
-        long maxLeft = maximumSum(a.subList(0, mid), m);
-        long maxRight = maximumSum(a.subList(mid, a.size() - 1), m);
-        long sumLeft = 0, sumRight = 0;
-        for (int i = 0; i < a.subList(0, mid).size(); i++) {
-            sumLeft += a.subList(0, mid).get(i);
-            localMax = sumLeft % m;
-            max = Math.max(max, localMax);
-        }
-        for (int i = mid; i < a.subList(mid, a.size() - 1).size(); i++) {
-            sumRight += a.subList(mid, a.size() - 1).get(i);
-            localMax = sumRight % m;
-            max = Math.max(max, localMax);
-        }
-        // max = Math.max(max, maxLeft);
-        // max = Math.max(max, maxRight);
+        System.out.println(sets);
 
         return max;
+
     }
 
 }
