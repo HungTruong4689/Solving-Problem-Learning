@@ -21,35 +21,19 @@ class Result {
 
     public static int alternatingCharacters(String s) {
         // Write your code here
-        int lastSeen = 0;
-        int pos = 1;
-        int init = 1;
-        int count = 0;
-        while (init < s.length()) {
-            // if(init+1 == s.length() && s.charAt(0) != s.charAt(init)){
-            // break;
-            // }
-            if (pos >= s.length()) {
-                break;
+        int deletions = 0;
+        int currentCount = 1;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i - 1) != s.charAt(i)) {
+                deletions += currentCount - 1;
+                currentCount = 1;
+                continue;
             }
-            init = pos;
-            System.out.println("s : " + s);
-            System.out.println("length " + s.length());
-            System.out.println("init " + init);
-            System.out.println("count: " + count);
-            System.out.println("s.charAt(init) == lastSeen " + (s.charAt(init) == s.charAt(lastSeen)));
-            if (s.charAt(init) == s.charAt(lastSeen)) {
-                s = s.substring(0, init) + s.substring(init + 1, s.length());
-                count++;
-
-                init = 1;
-            } else {
-                lastSeen = init;
-                init = lastSeen + 1;
-                pos = init;
-            }
+            currentCount++;
         }
-        return count;
+        deletions += currentCount - 1;
+
+        return deletions;
     }
 
 }
