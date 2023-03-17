@@ -24,28 +24,20 @@ class Result {
     public static long arrayManipulation(int n, List<List<Integer>> queries) {
         // Write your code here
         long max = 0;
-        long[] arr = new long[n];
+        long[] arr = new long[n + 1];
         for (int i = 0; i < queries.size(); i++) {
-            for (int j = queries.get(i).get(0) - 1; j <= queries.get(i).get(1) - 1; j++) {
-                arr[j] += queries.get(i).get(2);
+            int a = queries.get(i).get(0);
+            int b = queries.get(i).get(1);
+            int k = queries.get(i).get(2);
+            arr[a] += k;
+            if (b + 1 <= n) {
+                arr[b + 1] -= k;
             }
-            for (int k = 0; k < arr.length; k++) {
-                System.out.print(arr[k] + " ");
-
-            }
-            System.out.println();
         }
-        int left = 0;
-        int right = n - 1;
-        while (left <= right) {
-            if (arr[left] >= max) {
-                max = arr[left];
-            }
-            if (arr[right] >= max) {
-                max = arr[right];
-            }
-            left++;
-            right--;
+        long sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += arr[i];
+            max = Math.max(max, sum);
         }
         return max;
     }
