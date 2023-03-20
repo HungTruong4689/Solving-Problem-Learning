@@ -50,25 +50,26 @@ class Result {
         if (s.length() % 2 != 0) {
             return "NO";
         }
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Character> apertura = new Stack<>();
+        Stack<Character> cierre = new Stack<>();
+        Map<Character, Character> pairs = new HashMap<>();
+        pairs.put('{', '}');
+        pairs.put('(', ')');
+        pairs.put('[', ']');
         for (int i = 0; i < s.length(); i++) {
-            int num = s.charAt(i);
-            if (num == 40 || num == 91 || num == 123) {
-                stack.push(num);
+            if (pairs.keySet().contains(s.charAt(i))) {
+                apertura.push(s.charAt(i));
             } else {
-                // int index = stack.size() - 1;
-                int last = stack.pop();
-                if (num - 1 == last || num - 2 == last) {
+                if (apertura.size() <= 0)
+                    return "NO";
+                Character aux = apertura.pop();
+                if (s.charAt(i) == pairs.get(aux))
                     continue;
-                } else {
-                    break;
-                }
+                else
+                    return "NO";
             }
         }
-        System.out.println(stack);
-
-        int size = stack.size();
-        return size == 0 ? "YES" : "NO";
+        return (apertura.size() == 0 && cierre.size() == 0) ? "YES" : "NO";
     }
 
 }
