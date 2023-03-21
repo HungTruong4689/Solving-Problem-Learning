@@ -33,6 +33,7 @@ class Result {
         }
 
         int count = 0;
+        // add the difference
         for (int i = 0; i < 26; i++) {
             System.out.print(arr[i] + " ");
             if (arr[i] < 0)
