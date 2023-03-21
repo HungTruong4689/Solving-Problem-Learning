@@ -1,3 +1,5 @@
+package easy;
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -7,6 +9,9 @@ import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
+import Result;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -46,15 +51,15 @@ class Result {
                 maxPattern = (patternLength > maxPattern) ? patternLength : maxPattern; // Keep a running max
 
             } // for j
-        } // for  i 
-axPattern;
-    } 
+        } // for i
+    axPattern;}
 
-}  
-  
-public c Solution {
+    }
+
+public c Solution{
+
     public static void main(String[] args) throws IOException {
-BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         int l = Integer.parseInt(bufferedReader.readLine().trim());

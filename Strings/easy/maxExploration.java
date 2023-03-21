@@ -1,3 +1,5 @@
+package easy;
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -7,36 +9,37 @@ import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
+import Result;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 class Result {
 
     /*
-     * Complete the 'beautifulBinaryString' function below.
+     * Complete the 'marsExploration' function below.
      *
      * The function is expected to return an INTEGER.
-     * The function accepts STRING b as parameter.
+     * The function accepts STRING s as parameter.
      */
 
-    public static int beautifulBinaryString(String b) {
+    public static int marsExploration(String s) {
         // Write your code here
         int count = 0;
-
-        for (int i = 1; i < b.length() - 1; i++) {
-
-            int prev = +b.charAt(i - 1) - 48;
-            int pre = +b.charAt(i) - 48;
-            int fur = +b.charAt(i + 1) - 48;
-            System.out.println(prev);
-            if (prev == 0 && pre == 1 && fur == 0) {
-                count++;
-                i += 2;
+        for (int i = 0; i < s.length(); i++) {
+            int rem = (i + 1) % 3;
+            if (rem == 1 || rem == 0) {
+                if (s.charAt(i) != 'S') {
+                    count++;
+                }
+            } else {
+                if (s.charAt(i) != 'O') {
+                    count++;
+                }
             }
         }
-
-        return count++;
-
+        return count;
     }
 
 }
@@ -46,11 +49,9 @@ public class Solution {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
+        String s = bufferedReader.readLine();
 
-        String b = bufferedReader.readLine();
-
-        int result = Result.beautifulBinaryString(b);
+        int result = Result.marsExploration(s);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

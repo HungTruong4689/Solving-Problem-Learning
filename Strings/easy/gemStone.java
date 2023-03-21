@@ -1,3 +1,4 @@
+package easy;
 
 import java.io.*;
 import java.math.*;
@@ -8,6 +9,9 @@ import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
+import Result;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 

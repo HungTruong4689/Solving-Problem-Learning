@@ -7,6 +7,9 @@ import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
+import easy.Result;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -17,17 +20,17 @@ class Result {
      *
      * The function is expected to return an INTEGER.
      * The function accepts following parameters:
-     *  1. INTEGER a
-     *  2. INTEGER b
+     * 1. INTEGER a
+     * 2. INTEGER b
      */
 
     public static int squares(int a, int b) {
-    // Write your code here
-        int count =0;
-        int start = (int)Math.sqrt(a);
-        int end = (int)Math.sqrt(b);
+        // Write your code here
+        int count = 0;
+        int start = (int) Math.sqrt(a);
+        int end = (int) Math.sqrt(b);
         count = end - start;
-        if(Math.pow(start,2)>=a){
+        if (Math.pow(start, 2) >= a) {
             count++;
         }
         return count;
