@@ -38,6 +38,7 @@ class Result {
         }else{
             int left =0;
             int right =1;
+            //binary search
             while(right<oddList.size()){
                 result += 2* (oddList.get(right)-oddList.get(left));
                 left +=2;
