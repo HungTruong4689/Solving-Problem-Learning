@@ -30,6 +30,7 @@ class Result {
             int a = s1.charAt(i) - 'a';
             arr[a]++;
         }
+        //check substring
         for(int i =0; i < s2.length();i++){
             int a = s2.charAt(i) - 'a';
             if(arr[a]>0){
