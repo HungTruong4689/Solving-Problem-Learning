@@ -21,38 +21,38 @@ class Result {
 
     public static String isValid(String s) {
     // Write your code here
-        int[] arr = new int[26];
-        for(int i =0 ; i < s.length();i++){
-            int a = s.charAt(i) - 'a';
-            arr[a]++;
-        }
-        int result =0;
-        List<Integer> sub = new ArrayList<Integer>();
-        
-        for(int i =0; i < arr.length;i++){
-            //System.out.print(arr[i] + " ");
-            if(arr[i]>0){
-                sub.add(arr[i]);
-            }
-        }
-        Collections.sort(sub);
-        System.out.println(sub);
-        int size = sub.size();
-        if(sub.get(size-1) ==sub.get(0)){
-            return "YES";
-        }
-        if(sub.get(0) == 1 && sub.get(1) == sub.get(size-1) ){
-            return "YES";
-        }
-        
-        // if(sub.get(size-1) ==1){
-        //     return "YES";
-        // }
-        
-        if( sub.get(0) ==sub.get(1) && sub.get(1) ==sub.get(size-2)&&   sub.get(size-1) ==sub.get(size-2) +1){
-            return "YES";
-        }
-        return "NO";
+        Map<Character, Integer> charFreqMap = new HashMap<>();
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      int freq = charFreqMap.getOrDefault(c, 0);
+      charFreqMap.put(c, ++freq);
+    }
+
+    int[] arr = new int[charFreqMap.size()];
+    int idx = 0;
+    for (Map.Entry<Character, Integer> characterIntegerEntry : charFreqMap.entrySet()) {
+      arr[idx++] = characterIntegerEntry.getValue();
+    }
+    Arrays.sort(arr);
+
+    if (charFreqMap.size() == 1) return "YES";
+
+    int first = arr[0];
+    int second = arr[1];
+    int secondLast = arr[arr.length - 2];
+    int last = arr[arr.length - 1];
+
+    // If first and last are same, then all frequencies are same
+    if (first == last) return "YES";
+
+    // If first is 1, and all other characters have 1 frequency
+    if (first == 1 && second == last) return "YES";
+
+    // If all are same and last character has just 1 extra count
+    if (first == second && second == secondLast && secondLast == (last - 1)) return "YES";
+
+    // Else invalid string
+    return "NO";
         
     }
 
