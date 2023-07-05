@@ -33,7 +33,7 @@ class Result {
         for (int i = 0; i < s.length(); i++) {
             int val = s.charAt(i);
             int a = s.charAt(i) + rem;
-            if (val > 64 && val < 91) {
+            if (val > 64 && val < 91) { //the range of alphabet
                 if (a > 90) {
                     a = 65 + a - 91;
                 }
