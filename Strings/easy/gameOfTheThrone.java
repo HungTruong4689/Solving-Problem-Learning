@@ -49,7 +49,7 @@ class Result {
                 return "NO";//if odd >0
             }
             return "YES";
-        }else if(check == 1 || result == 1 ){
+        }else if(check == 1 || result == 1 ){ // compare the check
            if(odd %2  ==1 && odd >1){
                return "NO";
            }
