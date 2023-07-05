@@ -50,7 +50,7 @@ class Result {
             }
             return "YES";
         }else if(check == 1 || result == 1 ){ // compare the check
-           if(odd %2  ==1 && odd >1){
+           if(odd %2  ==1 && odd >1){// odd number
                return "NO";
            }
             return "YES";
