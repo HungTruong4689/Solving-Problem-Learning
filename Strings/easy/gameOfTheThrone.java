@@ -46,7 +46,7 @@ class Result {
         System.out.println(odd);
         if(check == 0){
             if(odd >0){
-                return "NO";
+                return "NO";//if odd >0
             }
             return "YES";
         }else if(check == 1 || result == 1 ){
