@@ -37,7 +37,7 @@ class Result {
                 if (a > 90) {
                     a = 65 + a - 91;
                 }
-            } else if (val > 96 && val < 123) {
+            } else if (val > 96 && val < 123) {//the uppercase alphabet
                 if (a > 122) {
                     a = 97 + a - 123;
                 }
