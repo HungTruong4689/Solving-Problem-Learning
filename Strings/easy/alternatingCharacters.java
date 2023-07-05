@@ -30,6 +30,7 @@ class Result {
         int currentCount = 1;
         for (int i = 1; i < s.length(); i++) {
             if (s.charAt(i - 1) != s.charAt(i)) {
+                //change value of deletions
                 deletions += currentCount - 1;
                 currentCount = 1;
                 continue;
