@@ -29,6 +29,7 @@ class Result {
         int count = 0;
         int init = 0;
         while (init < s.length()) {
+            //check camelcase
             char sm = s.charAt(init);
             if (Character.isUpperCase(sm)) {
                 count++;
