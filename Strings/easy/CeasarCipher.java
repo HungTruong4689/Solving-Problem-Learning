@@ -29,7 +29,7 @@ class Result {
     public static String caesarCipher(String s, int k) {
         // Write your code here
         String result = "";
-        int rem = k % 26;
+        int rem = k % 26; //check the range of character
         for (int i = 0; i < s.length(); i++) {
             int val = s.charAt(i);
             int a = s.charAt(i) + rem;
