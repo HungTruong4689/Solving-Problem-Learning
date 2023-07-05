@@ -33,7 +33,7 @@ class Result {
         List<Integer> list1 = new ArrayList<Integer>();
         List<Integer> list2 = new ArrayList<Integer>();
         for (int i = 1; i < s.length(); i++) {
-            int val = Math.abs((+s.charAt(i)) - (+s.charAt(i - 1)));
+            int val = Math.abs((+s.charAt(i)) - (+s.charAt(i - 1))); // convert the letter to number
             list1.add(val);
         }
         for (int i = 1; i < rev.length(); i++) {
