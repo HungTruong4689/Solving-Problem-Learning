@@ -30,6 +30,7 @@ class Result {
 
         for (int i = 1; i < b.length() - 1; i++) {
 
+            //take the number from the character
             int prev = +b.charAt(i - 1) - 48;
             int pre = +b.charAt(i) - 48;
             int fur = +b.charAt(i + 1) - 48;
