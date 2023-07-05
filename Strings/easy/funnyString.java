@@ -46,7 +46,7 @@ class Result {
                 count++;
             }
         }
-        if (count == list1.size()) {
+        if (count == list1.size()) { //compare two lists
             return "Funny";
         } else {
             return "Not Funny";
