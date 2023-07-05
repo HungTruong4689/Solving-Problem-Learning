@@ -22,7 +22,7 @@ class Result {
     public static String gameOfThrones(String s) {
     // Write your code here
         int[] arr = new int[26];
-        for(int i =0; i < s.length();i++){
+        for(int i =0; i < s.length();i++){// share a list of character
             int a = s.charAt(i) - 'a';
             arr[a]++;
         }
