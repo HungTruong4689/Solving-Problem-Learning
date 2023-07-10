@@ -46,6 +46,7 @@ class Result {
                 //number
             if (c >= 'a' && c <= 'z')
                 lowercase = true;
+                //lowercase
             if (c >= 'A' && c <= 'Z')
                 uppercase = true;
             if (cs.contains(c))
