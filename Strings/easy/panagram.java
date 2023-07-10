@@ -33,6 +33,7 @@ class Result {
         for (int i = 0; i < s.length(); i++) {
             String a = s.charAt(i) + "";
             a = a.toLowerCase();
+            //generate the character
             if (param.contains(a)) {
                 count++;
                 param = param.replace(a, "");
