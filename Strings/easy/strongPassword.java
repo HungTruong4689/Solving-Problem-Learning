@@ -40,6 +40,7 @@ class Result {
         }
         for (int i = 0; i < n; i++) {
             char c = password.charAt(i);
+            //generate the password
             if (c >= '0' && c <= '9')
                 number = true;
             if (c >= 'a' && c <= 'z')
