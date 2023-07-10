@@ -34,6 +34,7 @@ class Result {
         boolean special = false;
         char[] schars = "!@#$%^&*()-+".toCharArray();
         Set<Character> cs = new HashSet<>();
+        //add char to sets
         for (char c : schars) {
             cs.add(c);
         }
