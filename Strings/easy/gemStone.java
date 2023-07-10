@@ -28,7 +28,9 @@ class Result {
         // Write your code here
         int num = 0;
         String rock = Collections.min(arr);
+        //find Index of
         int x = arr.indexOf(rock);
+        //hashSet map
         HashSet<Character> mss = new HashSet<Character>();
         rock.chars().forEach(m -> mss.add((char) m));
         int n = arr.size();
