@@ -25,6 +25,7 @@ class Result {
      */
     public static boolean canDelete(String s) {
         for (int i = 0; i < s.length() - 1; i++) {
+            //compare two characters
             if (s.charAt(i) == s.charAt(i + 1)) {
                 return true;
 
