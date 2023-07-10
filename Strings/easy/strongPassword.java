@@ -43,6 +43,7 @@ class Result {
             //generate the password
             if (c >= '0' && c <= '9')
                 number = true;
+                //number
             if (c >= 'a' && c <= 'z')
                 lowercase = true;
             if (c >= 'A' && c <= 'Z')
