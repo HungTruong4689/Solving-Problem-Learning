@@ -28,6 +28,7 @@ class Result {
             int a = s.charAt(i) - 'a';
             if(arr[a]==0){
                 arr[a]++;
+                //count the number of character
                 result++;
             }
         }
