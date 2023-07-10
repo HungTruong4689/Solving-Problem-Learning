@@ -24,6 +24,7 @@ class Result {
         int[] arr = new int[26];
         int result =0;
         for(int i =0; i < s.length();i++){
+            //convert character to number
             int a = s.charAt(i) - 'a';
             if(arr[a]==0){
                 arr[a]++;
