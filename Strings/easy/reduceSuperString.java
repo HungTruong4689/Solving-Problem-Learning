@@ -47,6 +47,7 @@ class Result {
     public static String superReducedString(String s) {
         // Write your code here
 
+        //reduce the character
         int n = 0;
         System.out.println(findIndex(s));
         System.out.println(canDelete(s));
