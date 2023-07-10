@@ -23,6 +23,7 @@ class Result {
         // Write your code here
         int result = 0;
         for (int i = 0; i < s.length() / 2; i++) {
+            //find the letter of
             int left = s.charAt(i);
             int index = s.length() - 1 - i;
             int right = s.charAt(index);
