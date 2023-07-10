@@ -49,6 +49,7 @@ class Result {
                 //lowercase
             if (c >= 'A' && c <= 'Z')
                 uppercase = true;
+                //uppercase
             if (cs.contains(c))
                 special = true;
         }
