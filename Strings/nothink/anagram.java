@@ -26,6 +26,7 @@ class Result {
         if (s.length() % 2 == 1)
             return -1;
 
+            //input the value to the array
         for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
             // System.out.println(i + " " + j);
             arr[s.charAt(i) - 'a']++;
