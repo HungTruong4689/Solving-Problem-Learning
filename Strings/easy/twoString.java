@@ -39,6 +39,7 @@ class Result {
                 break;
             }
         }
+        //compare the characters of two string
         if(sub){
             return "YES";
         }
