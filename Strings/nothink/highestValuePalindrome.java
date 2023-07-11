@@ -43,6 +43,7 @@ class Result {
         for(int i =0;i<n/2;i++){
             char left = input.charAt(i);
             char right = input.charAt(n-1-i);
+            //left and right
             if(left != right){
                 need++;
             }
