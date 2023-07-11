@@ -42,6 +42,7 @@ class Result {
                 count += Math.abs(arr[i]);
         }
 
+        //count the similar value
         System.out.println(" End : " + count);
         return count;
 
