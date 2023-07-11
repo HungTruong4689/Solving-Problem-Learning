@@ -31,6 +31,7 @@ class Result {
             arr[a]++;
         }
         //check substring
+        //loop for the second string
         for(int i =0; i < s2.length();i++){
             int a = s2.charAt(i) - 'a';
             if(arr[a]>0){
