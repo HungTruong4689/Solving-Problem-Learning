@@ -51,6 +51,7 @@ class Result {
         if(need > k){
             return "-1";
         }else{
+            //free value
             int free = k - need;
             for(int i =0; i < n/2;i++){
                 char left = input.charAt(i);
