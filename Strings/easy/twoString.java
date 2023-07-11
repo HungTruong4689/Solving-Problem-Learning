@@ -25,7 +25,7 @@ class Result {
     // Write your code here
         boolean sub = false;
         int[] arr = new int[26];
-        
+        //loop for the first string
         for(int i =0; i < s1.length();i++){
             int a = s1.charAt(i) - 'a';
             arr[a]++;
