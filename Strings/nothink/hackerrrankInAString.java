@@ -22,6 +22,7 @@ class Result {
         String hackerrank = "hackerrank";
         int index = 0;
         for (int i = 0; i < str.length(); i++) {
+            //compare two strings
             if (str.charAt(i) == hackerrank.charAt(index)) {
                 index++;
             }
