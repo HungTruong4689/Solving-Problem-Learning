@@ -33,6 +33,7 @@ class Result {
         int i, j, curr;
         i = 0;
 
+        //convert string to number
         while (i < s.length()) {
             j = i;
             curr = 0;
