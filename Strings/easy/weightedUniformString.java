@@ -46,6 +46,7 @@ class Result {
         // System.out.println(num);
         // System.out.println(sub);
         // System.out.println(sum);
+        //watch the value if it contains value
         for (Integer elm : queries) {
             if (map.contains(elm)) {
                 result.add("Yes");
