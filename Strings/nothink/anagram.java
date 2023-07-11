@@ -37,6 +37,7 @@ class Result {
         // add the difference
         for (int i = 0; i < 26; i++) {
             System.out.print(arr[i] + " ");
+            //count the same value
             if (arr[i] < 0)
                 count += Math.abs(arr[i]);
         }
