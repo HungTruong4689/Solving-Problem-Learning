@@ -39,6 +39,7 @@ class Result {
         //int j = s.length()-1;
         int need =0;
         StringBuilder input = new StringBuilder(s);
+        //input value
         for(int i =0;i<n/2;i++){
             char left = input.charAt(i);
             char right = input.charAt(n-1-i);
