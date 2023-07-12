@@ -19,6 +19,7 @@ class Result {
      * The function accepts STRING s as parameter.
      */
     public static boolean checkPalin(String s, int i, int j) {
+        //check left and right
         while (i < j) {
             if (s.charAt(i) != s.charAt(j)) {
                 return false;
