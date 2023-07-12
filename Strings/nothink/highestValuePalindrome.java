@@ -66,6 +66,7 @@ class Result {
                         input.setCharAt(i,'9');
                         free--;
                     }
+                    // right is 9
                     if(right != '9'){
                         input.setCharAt(n-1-i,'9');
                         free--;
