@@ -35,6 +35,7 @@ class Result {
                 break;
             }
         }
+        //substring is yes or no
         System.out.println(isValid ? "YES " + subString : "NO");
     }
 
