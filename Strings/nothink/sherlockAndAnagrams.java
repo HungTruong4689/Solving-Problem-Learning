@@ -29,6 +29,7 @@ class Result {
             for(int j=i; j>=0; --j){
                 tmpstr[s.charAt(j)-'a']++;
                 
+                //count the character
                 for(int k=0; k<j; ++k){
                     int[] chars = new int[26];
                     int x = k;
