@@ -57,6 +57,7 @@ class Result {
                 char left = input.charAt(i);
                 char right = input.charAt(n-1-i);
                 if(free >= 2){
+                    //check if left and right
                     if(left != right){
                         free++;
                     }
