@@ -35,6 +35,7 @@ class Result {
         int i = 0;
         int j = s.length() - 1;
 
+        //if index of left not equal right
         while (i < j) {
             if (s.charAt(i) != s.charAt(j)) {
                 if (checkPalin(s, i + 1, j)) {
