@@ -93,6 +93,7 @@ class Result {
                     }
                 }
             }
+            //check free is not 0
             if(n %2 == 1 && free >0) input.setCharAt(n/2, '9');
         }
         
