@@ -24,6 +24,7 @@ class Result {
         boolean isValid = false;
         for (int i = 1; i <= s.length() / 2; i++) {
             subString = s.substring(0, i);
+            //parse two string
             Long num = Long.parseLong(subString);
             String validString = subString;
             while (validString.length() < s.length()) {
