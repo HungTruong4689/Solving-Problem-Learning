@@ -37,6 +37,7 @@ class Result {
 
         //if index of left not equal right
         while (i < j) {
+            //compare two character
             if (s.charAt(i) != s.charAt(j)) {
                 if (checkPalin(s, i + 1, j)) {
                     return i;
