@@ -39,6 +39,7 @@ class Result {
         while (i < j) {
             //compare two character
             if (s.charAt(i) != s.charAt(j)) {
+                //check palindrone
                 if (checkPalin(s, i + 1, j)) {
                     return i;
                 }
