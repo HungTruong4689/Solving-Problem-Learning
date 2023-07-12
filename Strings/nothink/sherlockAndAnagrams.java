@@ -25,6 +25,7 @@ class Result {
         for(int i=1; i<s.length(); ++i){
             int[] tmpstr = new int[26];
             
+            //create temporarily string
             for(int j=i; j>=0; --j){
                 tmpstr[s.charAt(j)-'a']++;
                 
