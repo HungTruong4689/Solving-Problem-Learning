@@ -61,6 +61,7 @@ class Result {
                     if(left != right){
                         free++;
                     }
+                    //left is 9
                     if(left != '9'){
                         input.setCharAt(i,'9');
                         free--;
