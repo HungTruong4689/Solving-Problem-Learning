@@ -24,7 +24,7 @@ class Result {
         char[] arr = w.toCharArray();
         
         boolean found = false;
-        int pivotIndex = -1;
+        int pivotIndex = -1; //pivotIndex
         for(int i = arr.length -1 ; i>0; i--){
             if(arr[i]<= arr[i-1]) continue;
             found = true;
