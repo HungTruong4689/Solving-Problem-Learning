@@ -34,6 +34,7 @@ class Result {
         }
         for(int i =1;i<m;i++){
             for(int j =0;j<n;j++){
+                //get the front area
                 frontArea += A.get(i).get(j) > A.get(i-1).get(j) ? (A.get(i).get(j) - A.get(i-1).get(j)) :0;
                 rearArea += A.get(m-i-1).get(j)>A.get(m-i).get(j) ?(A.get(m-i-1).get(j) -A.get(m-i).get(j))   :0;
             }
