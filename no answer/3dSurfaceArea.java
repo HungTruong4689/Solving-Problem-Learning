@@ -52,6 +52,7 @@ class Result {
                 rightArea += A.get(j).get(n-i-1)>A.get(j).get(n-i) ?(A.get(j).get(n-i-1) -A.get(j).get(n-i) )  :0;
             }
         }
+        //get the surface
         surface += frontArea + rearArea + leftArea + rightArea;
         
         return surface;
