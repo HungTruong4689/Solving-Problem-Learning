@@ -32,6 +32,7 @@ class Result {
             break;
         }
         //System.out.println();
+        // no found
         if(!found) return "no answer";
         int rightMostIndex = -1;
         for(int i = arr.length -1; i>pivotIndex;i--){
