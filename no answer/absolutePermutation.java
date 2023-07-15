@@ -33,6 +33,7 @@ class Result {
         }else if( n% 2==0 && n %(2*k)==0){
             int blocks = n / k;
                 int currentNumber = k;
+                // blocks
                 for (int i = 0; i < blocks; i++) {
                     for (int j = 0; j < k; j++) {
                         currentNumber++;
