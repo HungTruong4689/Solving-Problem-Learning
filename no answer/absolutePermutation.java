@@ -27,6 +27,7 @@ class Result {
         
         if(k==0){
             for(int i =1; i<=n;i++){
+                //add the new number to list
                 result.add(i);
             }
         }else if( n% 2==0 && n %(2*k)==0){
