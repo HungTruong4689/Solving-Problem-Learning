@@ -30,6 +30,7 @@ class Result {
                 //add the new number to list
                 result.add(i);
             }
+            // see the number if divided into 2
         }else if( n% 2==0 && n %(2*k)==0){
             int blocks = n / k;
                 int currentNumber = k;
