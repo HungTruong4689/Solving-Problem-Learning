@@ -34,6 +34,7 @@ class Result {
         //System.out.println();
         // no found
         if(!found) return "no answer";
+        //rightMostIndex
         int rightMostIndex = -1;
         for(int i = arr.length -1; i>pivotIndex;i--){
             if(arr[i]> arr[pivotIndex]){
