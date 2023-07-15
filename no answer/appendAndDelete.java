@@ -41,6 +41,7 @@ class Result {
         int balance = s.length() - commonLength;
         balance += t.length() - commonLength;
         
+        //watch the balance
         if (balance <= k){
            if ((balance - k) % 2 == 0) {
             return "Yes";
