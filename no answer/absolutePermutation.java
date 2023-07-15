@@ -41,6 +41,7 @@ class Result {
                         result.add(currentNumber);
 
                     }
+                    //watch the currentNumber
                     if (i % 2 != 0) {
                         currentNumber = currentNumber + (2 * k);
                     } else {
