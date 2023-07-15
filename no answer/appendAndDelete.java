@@ -37,6 +37,7 @@ class Result {
             }
         }
         
+        //commonLength
         int balance = s.length() - commonLength;
         balance += t.length() - commonLength;
         
