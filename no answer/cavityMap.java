@@ -36,6 +36,7 @@ class Result {
                 Character l = grid.get(i).charAt(j-1);
                 //char r
                 Character r = grid.get(i).charAt(j+1);
+                //char t
                 Character t = grid.get(i-1).charAt(j);
                 Character b = grid.get(i+1).charAt(j);
                 if(c > t && c>b && c>l && c >r){
