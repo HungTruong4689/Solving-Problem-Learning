@@ -34,6 +34,7 @@ class Result {
                 Character c = grid.get(i).charAt(j);
                 //char l
                 Character l = grid.get(i).charAt(j-1);
+                //char r
                 Character r = grid.get(i).charAt(j+1);
                 Character t = grid.get(i-1).charAt(j);
                 Character b = grid.get(i+1).charAt(j);
