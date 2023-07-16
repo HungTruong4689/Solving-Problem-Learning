@@ -26,6 +26,7 @@ class Result {
     // Write your code here
         //list x
         List<Integer> x = new ArrayList<Integer>();
+        //list y
         List<Integer> y = new ArrayList<Integer>();
         for(int i =1; i< grid.size() -1;i++){
             for(int j =1; j< grid.get(i).length() -1;j++){
