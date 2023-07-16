@@ -30,6 +30,7 @@ class Result {
         List<Integer> y = new ArrayList<Integer>();
         for(int i =1; i< grid.size() -1;i++){
             for(int j =1; j< grid.get(i).length() -1;j++){
+                //char c
                 Character c = grid.get(i).charAt(j);
                 Character l = grid.get(i).charAt(j-1);
                 Character r = grid.get(i).charAt(j+1);
