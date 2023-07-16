@@ -24,6 +24,7 @@ class Result {
 
     public static List<String> cavityMap(List<String> grid) {
     // Write your code here
+        //list x
         List<Integer> x = new ArrayList<Integer>();
         List<Integer> y = new ArrayList<Integer>();
         for(int i =1; i< grid.size() -1;i++){
