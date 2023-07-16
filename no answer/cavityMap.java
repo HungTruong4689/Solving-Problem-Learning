@@ -32,6 +32,7 @@ class Result {
             for(int j =1; j< grid.get(i).length() -1;j++){
                 //char c
                 Character c = grid.get(i).charAt(j);
+                //char l
                 Character l = grid.get(i).charAt(j-1);
                 Character r = grid.get(i).charAt(j+1);
                 Character t = grid.get(i-1).charAt(j);
