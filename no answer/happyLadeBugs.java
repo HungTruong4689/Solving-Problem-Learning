@@ -60,7 +60,7 @@ class Result {
         
         return YES; // all ladybugs can be made happy
     }
-    
+    //function to chekc ladybugs
     private static boolean isAlreadyAllLadybugsHappy(String board) {
         if (board.length() == 1) {
             return false;
