@@ -28,7 +28,7 @@ class Result {
         Set<Integer> hashSet = new HashSet<Integer>(ranked);
         ranked.clear();
         ranked.addAll(hashSet);
-        //Ordena de mayor a menor 
+        //Comparator
         Comparator<Integer> comparador = Collections.reverseOrder();
         Collections.sort(ranked, comparador);
          
