@@ -42,12 +42,13 @@ class Result {
         
         /* If there is only a single colored ladybug, there is no chance made all ladybugs happy */
         for (int frequency : characterFrequencies) {
+            //check if there is any character
             if (frequency == 1) {
                 return NO;
             }
         }
         
-        /* If there board consists of ladybugs all of them are happy */
+        /* If there board consists of ladybugs all of them are happy -check */
         if (isAlreadyAllLadybugsHappy(board)) {
             return YES;
         }
