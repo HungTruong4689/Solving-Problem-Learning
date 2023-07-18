@@ -22,8 +22,9 @@ class Result {
      */
 
       public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
+        //Set the final result
         List<Integer> result = new ArrayList<Integer>();
-        //Elimina numeros repetidos
+        //
         Set<Integer> hashSet = new HashSet<Integer>(ranked);
         ranked.clear();
         ranked.addAll(hashSet);
