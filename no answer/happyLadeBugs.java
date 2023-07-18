@@ -54,7 +54,7 @@ class Result {
         }
         
         /* If there is no chance to make all ladybugs happy */
-        if (numberOfEmptyCells == 0) {
+        if (numberOfEmptyCells == 0) { //empty cell
             return NO;
         }
         
