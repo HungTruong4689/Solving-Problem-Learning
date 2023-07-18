@@ -34,6 +34,7 @@ class Result {
             if (currentCharacter == UNDERSCORE) { // cell is empty - recheck
                 numberOfEmptyCells++;
             } else { // cell contains a ladybug
+                //check cell to contains a ladybug or not
                 int characterIndex = currentCharacter - INDEX_A;
                 characterFrequencies[characterIndex]++;
             }
