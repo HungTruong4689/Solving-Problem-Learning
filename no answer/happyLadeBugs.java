@@ -66,6 +66,7 @@ class Result {
             return false;
         }
         
+        //compare with the length of the board
         for (int i = 1; i < board.length() - 1; i++) {
             if (board.charAt(i) != board.charAt(i - 1) && board.charAt(i) != board.charAt(i + 1)) {
                 return false;
