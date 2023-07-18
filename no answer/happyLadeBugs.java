@@ -26,6 +26,7 @@ class Result {
     
     public static String happyLadybugs(String board) {
         int numberOfEmptyCells = 0;
+        //character frequency
         int[] characterFrequencies = new int[NUMBER_OF_CHARACTERS];
         
         /* Determine the frequencies */
