@@ -47,7 +47,8 @@ class Result {
                     i = end;                    
                 }
                 medium = (start + end) / 2;
-            }        
+            }
+            //check the ranked size        
             if (medium == ranked.size()) {
                 result.add(medium + 1);
             } else if (i < 0) {
