@@ -37,7 +37,7 @@ class Result {
             int end = ranked.size() - 1;
             int medium = (start + end) / 2;
             int i = 0;
-            //Busqueda binaria
+            //Check valuePlayer
             while (start <= end && ranked.get(medium) != valuePlayer) {
                 if (valuePlayer < ranked.get(medium)) {
                     start = medium + 1;
