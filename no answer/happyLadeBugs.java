@@ -31,7 +31,7 @@ class Result {
         
         /* Determine the frequencies */
         for (char currentCharacter : board.toCharArray()) {
-            if (currentCharacter == UNDERSCORE) { // cell is empty
+            if (currentCharacter == UNDERSCORE) { // cell is empty - recheck
                 numberOfEmptyCells++;
             } else { // cell contains a ladybug
                 int characterIndex = currentCharacter - INDEX_A;
