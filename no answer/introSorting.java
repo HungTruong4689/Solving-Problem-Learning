@@ -25,7 +25,7 @@ class Result {
     // Write your code here
         int result=0;
         for(int i =0; i<arr.size();i++){
-            if(arr.get(i) == V){
+            if(arr.get(i) == V){ //compare value with given value
                 result =i;
                 break;
             }
