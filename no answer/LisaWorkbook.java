@@ -28,6 +28,7 @@ class Result {
         int curPage =1;
         for(Integer elm : arr){
             for(int i = 1; i<= elm; i++){
+                //current page
                 if(i == curPage){
                     result++;
                 }
