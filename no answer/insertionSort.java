@@ -41,7 +41,7 @@ class Result {
                 printArray(arr);
                 break;
             }
-            arr.set(i+1,arr.get(i));//Shift to the right
+            arr.set(i+1,arr.get(i));//Shift to the right of the array
             printArray(arr);
         }
         if(tmp < arr.get(0)){
