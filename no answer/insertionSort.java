@@ -42,7 +42,7 @@ class Result {
                 break;
             }
             arr.set(i+1,arr.get(i));//Shift to the right of the array
-            printArray(arr);
+            printArray(arr); //print all array elements
         }
         if(tmp < arr.get(0)){
           arr.set(0,tmp);  
