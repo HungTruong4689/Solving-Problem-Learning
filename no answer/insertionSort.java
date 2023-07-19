@@ -35,6 +35,7 @@ class Result {
         //temporary variable
         int tmp = arr.get(last);
         for(int i = nextLast; i  >=0; i--){
+            //min value
             if(tmp >= arr.get(i)){//Found where it goes
                 arr.set(i+1,tmp);
                 printArray(arr);
