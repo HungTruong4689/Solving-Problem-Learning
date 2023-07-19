@@ -24,7 +24,9 @@ class Result {
     public static int nonDivisibleSubset(int k, List<Integer> s) {
     // Write your code here
         int result = 0;
+        //hashset to take unique value
         HashSet<Integer> sets = new HashSet<Integer>();
+        //
         List<Integer> list = new ArrayList<Integer>();
         
         int[] remains=new int[k];
