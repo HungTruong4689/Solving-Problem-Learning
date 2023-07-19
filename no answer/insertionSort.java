@@ -31,7 +31,8 @@ class Result {
         int last = n -1;
         int nextLast = n -2;
         //int temp = 
-        
+    
+        //temporary variable
         int tmp = arr.get(last);
         for(int i = nextLast; i  >=0; i--){
             if(tmp >= arr.get(i)){//Found where it goes
