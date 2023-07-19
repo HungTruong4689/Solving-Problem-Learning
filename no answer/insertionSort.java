@@ -45,7 +45,7 @@ class Result {
             printArray(arr); //print all array elements
         }
         if(tmp < arr.get(0)){
-          arr.set(0,tmp);  
+          arr.set(0,tmp);  //set value to array
           printArray(arr);
         } 
         
