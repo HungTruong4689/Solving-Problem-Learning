@@ -26,7 +26,7 @@ class Result {
         int result=0;
         for(int i =0; i<arr.size();i++){
             if(arr.get(i) == V){ //compare value with given value
-                result =i;
+                result =i; // take the index
                 break;
             }
         }
