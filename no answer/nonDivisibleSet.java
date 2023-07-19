@@ -26,7 +26,7 @@ class Result {
         int result = 0;
         //hashset to take unique value
         HashSet<Integer> sets = new HashSet<Integer>();
-        //
+        //array list
         List<Integer> list = new ArrayList<Integer>();
         
         int[] remains=new int[k];
