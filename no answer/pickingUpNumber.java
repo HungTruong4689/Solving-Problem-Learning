@@ -22,6 +22,7 @@ class Result {
         //arrayList of subArray
         List<Integer> subArray = new ArrayList<>();
         
+        //integer of subArray
         for(Integer integer: a){
             if( integer == b || integer +1 ==b){
                 subArray.add(integer);
