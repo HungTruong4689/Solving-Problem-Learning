@@ -37,6 +37,7 @@ class Result {
         result += Math.min(remains[0],1);
         for (int i=1;i<remains.length;i++){
             if(i==(k-i)){
+                //increase value of list
                 result++;
             }else {
                 if (remains[i]>=remains[k-i]){
