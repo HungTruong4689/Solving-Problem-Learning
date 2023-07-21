@@ -47,6 +47,7 @@ class Result {
                     //increase remains k - i
                     result+=remains[k-i];
                 }
+                //assign 0 to i
                 remains[i]=0;
                 remains[k-i]=0;
             }
