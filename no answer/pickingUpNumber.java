@@ -39,6 +39,7 @@ class Result {
         List<Integer> resultArray = new ArrayList<>();
         
         for(int i =0; i< a.size();i++){
+            //CreateSubArray function
             resultArray.add(createSubArray(a,a.get(i)).size());
         }
         
