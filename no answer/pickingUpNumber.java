@@ -35,6 +35,7 @@ class Result {
     // Write your code here
         int result =0, tempVal=0;
         List<Integer> subArray = new ArrayList<>();
+        //resultArray
         List<Integer> resultArray = new ArrayList<>();
         
         for(int i =0; i< a.size();i++){
