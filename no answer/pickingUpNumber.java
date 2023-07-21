@@ -47,6 +47,7 @@ class Result {
         //integer of  resultArray
         for(Integer integer: resultArray){
             if(integer >=result){
+                //assign integer to result
                 result = integer;
             }
         }
