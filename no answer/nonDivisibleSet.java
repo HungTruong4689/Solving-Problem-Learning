@@ -49,6 +49,7 @@ class Result {
                 }
                 //assign 0 to i
                 remains[i]=0;
+                //assign 0 to k-i
                 remains[k-i]=0;
             }
         }
