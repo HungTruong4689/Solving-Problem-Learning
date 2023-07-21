@@ -33,6 +33,7 @@ class Result {
         for (int i=0;i<s.size();i++){
             remains[s.get(i)%k]++;
         }
+        //compare 1 with the list
         result += Math.min(remains[0],1);
         for (int i=1;i<remains.length;i++){
             if(i==(k-i)){
