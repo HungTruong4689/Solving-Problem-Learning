@@ -41,6 +41,7 @@ class Result {
                 result++;
             }else {
                 if (remains[i]>=remains[k-i]){
+                    //increase remains
                     result+=remains[i];
                 }else {
                     result+=remains[k-i];
