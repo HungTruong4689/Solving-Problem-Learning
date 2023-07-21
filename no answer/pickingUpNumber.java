@@ -44,6 +44,7 @@ class Result {
         }
         
         System.out.println(resultArray);
+        //integer of  resultArray
         for(Integer integer: resultArray){
             if(integer >=result){
                 result = integer;
