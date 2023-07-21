@@ -19,6 +19,7 @@ class Result {
      * The function accepts INTEGER_ARRAY a as parameter.
      */
     public static List<Integer> createSubArray(List<Integer> a,int b){
+        //arrayList of subArray
         List<Integer> subArray = new ArrayList<>();
         
         for(Integer integer: a){
