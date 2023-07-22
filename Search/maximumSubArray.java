@@ -42,6 +42,7 @@ class Result {
             //maximum value of prefix
             max = Math.max(prefix, max);
 
+            //get higher value of sets
             Long it = sets.higher(prefix);
 
             if (it != null) {
