@@ -32,6 +32,7 @@ class Result {
             //second round
             for (int j = i + 1; j < arr.size(); j++) {
                 if (arr.get(i) + arr.get(j) == m) {
+                    //add i value
                     sets.add(i + 1);
                     sets.add(j + 1);
                 }
