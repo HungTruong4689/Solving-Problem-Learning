@@ -37,7 +37,7 @@ class Result {
         sets.add(0L);
 
         for (int i = 0; i < a.size(); i++) {
-
+            //prefix
             prefix = (prefix + a.get(i)) % m;
             max = Math.max(prefix, max);
 
