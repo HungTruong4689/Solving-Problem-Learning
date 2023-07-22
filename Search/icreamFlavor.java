@@ -20,6 +20,7 @@ class Result {
     public static List<Integer> icecreamParlor(int m, List<Integer> arr) {
         // Write your code here
 
+        //sets of HashSet
         HashSet<Integer> sets = new HashSet<Integer>();
         // HashMap<Integer,Integer> sets = new HashMap<Integer,Integer>();
         // for(int i =0; i< arr.size();i++){
