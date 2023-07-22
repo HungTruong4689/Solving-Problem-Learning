@@ -34,6 +34,7 @@ class Result {
                 if (arr.get(i) + arr.get(j) == m) {
                     //add i value
                     sets.add(i + 1);
+                    //add j value
                     sets.add(j + 1);
                 }
             }
