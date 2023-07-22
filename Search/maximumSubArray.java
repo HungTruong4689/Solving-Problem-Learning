@@ -46,6 +46,7 @@ class Result {
             Long it = sets.higher(prefix);
 
             if (it != null) {
+                //max of prefix
                 max = Math.max(max, (prefix - it + m) % m);
             }
             sets.add(prefix);
