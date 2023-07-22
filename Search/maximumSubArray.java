@@ -33,6 +33,7 @@ class Result {
         long prefix = 0;
         //TreeSet
         TreeSet<Long> sets = new TreeSet<Long>();
+        //add first value to sets
         sets.add(0L);
 
         for (int i = 0; i < a.size(); i++) {
