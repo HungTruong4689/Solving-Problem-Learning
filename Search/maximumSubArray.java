@@ -39,6 +39,7 @@ class Result {
         for (int i = 0; i < a.size(); i++) {
             //prefix
             prefix = (prefix + a.get(i)) % m;
+            //maximum value of prefix
             max = Math.max(prefix, max);
 
             Long it = sets.higher(prefix);
