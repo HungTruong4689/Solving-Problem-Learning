@@ -26,6 +26,8 @@ class Result {
         // for(int i =0; i< arr.size();i++){
         // sets.put(i+1,arr.get(i));
         // }
+
+        //loop for the first round
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
                 if (arr.get(i) + arr.get(j) == m) {
