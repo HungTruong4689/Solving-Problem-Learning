@@ -24,6 +24,7 @@ class Result {
 
         //size of price
         for (int i = 0; i < price.size(); i++) {
+            //higher of the list
             Long header = list.higher(price.get(i));
             System.out.println("header " + header);
             if (header != null) {
