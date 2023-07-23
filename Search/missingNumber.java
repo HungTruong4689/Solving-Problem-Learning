@@ -23,6 +23,7 @@ class Result {
 
     public static List<Integer> missingNumbers(List<Integer> arr, List<Integer> brr) {
         // Write your code here
+        //map value hashmap
         HashMap<Integer, Integer> map1 = new HashMap<Integer, Integer>();
         // HashMap<Integer,Integer> map2 = new HashMap<Integer,Integer>();
         List<Integer> result = new ArrayList<Integer>();
