@@ -43,6 +43,7 @@ class Result {
         }
         for (Integer elm : brr) {
             if (map1.keySet().contains(elm)) {
+                //add elm of sub
                 sub.add(elm);
                 int val = map1.get(elm);
                 val--;
