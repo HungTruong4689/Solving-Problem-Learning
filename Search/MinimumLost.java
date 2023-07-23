@@ -22,6 +22,7 @@ class Result {
         //max value long
         long min = Long.MAX_VALUE;
 
+        //size of price
         for (int i = 0; i < price.size(); i++) {
             Long header = list.higher(price.get(i));
             System.out.println("header " + header);
