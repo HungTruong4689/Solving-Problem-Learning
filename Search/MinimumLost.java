@@ -33,6 +33,7 @@ class Result {
                 min = Math.min(header - price.get(i), min);
 
             }
+            //add value to list
             list.add(price.get(i));
         }
         System.out.println(list);
