@@ -17,7 +17,9 @@ class Result {
 
     public static long minimumLoss(List<Long> price) {
         // Write your code here
+        //TreeSet list
         TreeSet<Long> list = new TreeSet<Long>();
+        //max value long
         long min = Long.MAX_VALUE;
 
         for (int i = 0; i < price.size(); i++) {
