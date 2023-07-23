@@ -32,6 +32,7 @@ class Result {
         HashSet<Integer> sub = new HashSet<Integer>();
 
         for (Integer elm : arr) {
+            //map1 contains elm
             if (!map1.keySet().contains(elm)) {
                 map1.put(elm, 1);
             } else {
