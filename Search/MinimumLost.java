@@ -27,6 +27,7 @@ class Result {
             //higher of the list
             Long header = list.higher(price.get(i));
             System.out.println("header " + header);
+            //header is null or not
             if (header != null) {
                 min = Math.min(header - price.get(i), min);
 
