@@ -28,6 +28,7 @@ class Result {
         // HashMap<Integer,Integer> map2 = new HashMap<Integer,Integer>();
         //result list
         List<Integer> result = new ArrayList<Integer>();
+        //hashSet sub
         HashSet<Integer> sub = new HashSet<Integer>();
 
         for (Integer elm : arr) {
