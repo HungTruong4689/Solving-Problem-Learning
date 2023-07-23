@@ -26,6 +26,7 @@ class Result {
         //map value hashmap
         HashMap<Integer, Integer> map1 = new HashMap<Integer, Integer>();
         // HashMap<Integer,Integer> map2 = new HashMap<Integer,Integer>();
+        //result list
         List<Integer> result = new ArrayList<Integer>();
         HashSet<Integer> sub = new HashSet<Integer>();
 
