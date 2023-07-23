@@ -38,6 +38,7 @@ class Result {
         }
         System.out.println(list);
 
+        //return min value
         return min;
     }
 
