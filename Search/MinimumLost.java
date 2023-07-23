@@ -29,6 +29,7 @@ class Result {
             System.out.println("header " + header);
             //header is null or not
             if (header != null) {
+                //min of value
                 min = Math.min(header - price.get(i), min);
 
             }
