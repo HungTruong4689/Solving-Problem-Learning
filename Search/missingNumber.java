@@ -41,7 +41,7 @@ class Result {
                 map1.put(elm, val);
             }
         }
-        for (Integer elm : brr) {
+        for (Integer elm : brr) { //for loop o n
             if (map1.keySet().contains(elm)) {
                 //add elm of sub
                 sub.add(elm);
