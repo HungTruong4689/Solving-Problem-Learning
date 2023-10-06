@@ -30,7 +30,7 @@ class Result {
 
         if  (s.length() == 1)/ / Edge case where length is 1
         {
-            return maxPattern;
+            return maxPattern; //return value
         }
 
         //  Loop through all letter pairs
