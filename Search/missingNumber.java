@@ -34,7 +34,7 @@ class Result {
         for (Integer elm : arr) {
             //map1 contains elm
             if (!map1.keySet().contains(elm)) {
-                map1.put(elm, 1);
+                map1.put(elm, 1); //map contains
             } else {
                 int val = map1.get(elm);
                 val++;
