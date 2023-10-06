@@ -23,7 +23,7 @@ class Result {
 
     public static String twoStrings(String s1, String s2) {
     // Write your code here
-        boolean sub = false;
+        boolean sub = false; //compare two strings
         int[] arr = new int[26];
         //loop for the first string
         for(int i =0; i < s1.length();i++){
