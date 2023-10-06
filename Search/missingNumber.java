@@ -59,7 +59,7 @@ class Result {
             }
         }
         for (Integer elm : map1.keySet()) {
-            result.add(elm);
+            result.add(elm); //loop value
         }
 
         Collections.sort(result);
