@@ -54,7 +54,7 @@ class Result {
             }
         }
         for (Integer elm : sub) {
-            if (map1.get(elm) == 0) {
+            if (map1.get(elm) == 0) { //get value from map
                 map1.remove(elm);
             }
         }
