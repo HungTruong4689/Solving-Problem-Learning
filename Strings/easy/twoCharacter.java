@@ -38,7 +38,7 @@ class Result {
                 char on      char two = (char) ('a' + j)     char lastSeen = '\u0000'; //char value
                 int patternLength = 0; 
  
-                for (char letter : s.toCharArray()) {
+                for (char letter : s.toCharArray()) { //for loop character
                     if (letter == one || letter == two) {
         if (letter == lastSeen)// Duplicate found
                          {             continue nextLetter;
