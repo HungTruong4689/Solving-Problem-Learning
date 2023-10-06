@@ -35,7 +35,7 @@ class Result {
 
         //  Loop through all letter pairs
         for  (int i = 0; i < 26; i++     nextLetter: for (int j = i + 1; j < 26; j++) {
-                char on      char two = (char) ('a' + j)     char lastSeen = '\u0000';
+                char on      char two = (char) ('a' + j)     char lastSeen = '\u0000'; //char value
                 int patternLength = 0; 
  
                 for (char letter : s.toCharArray()) {
