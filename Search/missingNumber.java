@@ -50,7 +50,7 @@ class Result {
                 map1.put(elm, val);
             } else {
 
-                map1.put(elm, 1);
+                map1.put(elm, 1); //put value to map
             }
         }
         for (Integer elm : sub) {
